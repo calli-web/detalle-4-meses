@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Una pequeña historia hecha especialmente para ti."
+    >
+
+    <title>Una historia de dos ❤️</title>
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         CANVAS DEL ESPACIO
+    ====================================================== -->
+
+    <canvas id="spaceCanvas"></canvas>
+
+
+    <!-- =====================================================
+         CAPA OSCURA / EFECTO ESPACIAL
+    ====================================================== -->
+
+    <div class="space-overlay"></div>
+
+
+    <!-- =====================================================
+         EFECTO CRT
+    ====================================================== -->
+
+    <div class="crt"></div>
+
+
+    <!-- =====================================================
+         AUDIO
+
+         IMPORTANTE:
+         coloca tu música como:
+
+         assets/audio/a.mp3
+    ====================================================== -->
+
+    <audio
+        id="backgroundMusic"
+        loop
+        preload="auto"
+    >
+        <source
+            src="assets/audio/a.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <!-- =====================================================
+         CONTROL DE AUDIO
+    ====================================================== -->
+
+    <button
+        id="audioButton"
+        class="audio-button"
+        type="button"
+    >
+        🔇 AUDIO OFF
+    </button>
+
+
+    <!-- =====================================================
+         CONTENEDOR DE PARTICULAS
+    ====================================================== -->
+
+    <div id="particles"></div>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main id="app">
+
+
+        <!-- =================================================
+             01. PORTADA
+        ================================================== -->
+
+        <section
+            id="hero"
+            class="section hero-section"
+        >
+
+            <div class="terminal">
+
+                <div class="terminal-header">
+
+                    <div class="terminal-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="terminal-title">
+                        terminal://love.exe
+                    </div>
+
+                </div>
+
+
+                <div class="terminal-body">
+
+                    <div class="terminal-line">
+                        root@heart:~$ initialize_relationship.sh
+                    </div>
+
+                    <div class="terminal-line success">
+                        [ OK ] Sistema iniciado...
+                    </div>
+
+                    <div class="terminal-line success">
+                        [ OK ] Memorias encontradas...
+                    </div>
+
+                    <div class="terminal-line success">
+                        [ OK ] 4 meses detectados...
+                    </div>
+
+                    <div class="terminal-line pink-text">
+                        [ ♥ ] Persona especial encontrada...
+                    </div>
+
+
+                    <!-- CORAZÓN -->
+
+                    <div class="heart-container">
+
+                        <div class="heart-3d">
+                            ❤️
+                        </div>
+
+                    </div>
+
+
+                    <div class="system-status">
+                        &gt;&gt;&gt; ACCESS GRANTED &lt;&lt;&lt;
+                    </div>
+
+
+                    <!-- TITULO -->
+
+                    <h1 id="heroTitle">
+                        UNA HISTORIA DE DOS
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        Hay una pequeña historia
+                        que quiero enseñarte.
+
+                        <br>
+
+                        <span>
+                            No cierres esta ventana.
+                        </span>
+
+                    </p>
+
+
+                    <button
+                        id="startButton"
+                        class="cyber-button"
+                        type="button"
+                    >
+                        [ INICIAR ]
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="scroll-indicator">
+                ↓ SISTEMA LISTO ↓
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             02. MENSAJES
+        ================================================== -->
+
+        <section
+            id="messages"
+            class="section hidden-section"
+        >
+
+            <div class="message-container">
+
+                <div class="memory-number">
+                    MEMORY_<span id="memoryNumber">001</span>
+                </div>
+
+
+                <div
+                    id="messageText"
+                    class="message-text"
+                >
+                </div>
+
+
+                <button
+                    id="continueButton"
+                    class="cyber-button"
+                    type="button"
+                >
+                    [ CONTINUAR ]
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             03. MEMORIAS
+        ================================================== -->
+
+        <section
+            id="memories"
+            class="section hidden-section"
+        >
+
+            <div class="section-header">
+
+                <div class="system-label">
+                    // ARCHIVE / MEMORIES/ EN PROCESO
+                </div>
+
+                <h2>
+                    NUESTRAS MEMORIAS
+                </h2>
+
+                <p>
+                    Algunos pequeños recuerdos
+                    de nuestra historia. (ME GUSTARIA PODER CAPTURAR ESOS MOMENTOS CON TIGO)
+                </p>
+
+            </div>
+
+
+            <div class="gallery">
+
+
+                <!-- GIF 1 -->
+
+                <article class="memory-card">
+
+                    <div class="image-container">
+
+                        <img
+                            src="https://media.tenor.com/7S8E27i2098AAAAC/excited.gif"
+                            alt="Recuerdo 1"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="memory-label">
+                        MEMORY_01
+                    </div>
+
+                </article>
+
+
+                <!-- GIF 2 -->
+
+                <article class="memory-card">
+
+                    <div class="image-container">
+
+                        <img
+                            src="https://media.tenor.com/2s8K5Yn8-qIAAAAC/happy.gif"
+                            alt="Recuerdo 2"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="memory-label">
+                        MEMORY_02
+                    </div>
+
+                </article>
+
+
+                <!-- GIF 3 -->
+
+                <article class="memory-card">
+
+                    <div class="image-container">
+
+                        <img
+                            src="https://media.tenor.com/bQ9_Zq401f0AAAAC/hug.gif"
+                            alt="Recuerdo 3"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="memory-label">
+                        MEMORY_03
+                    </div>
+
+                </article>
+
+
+                <!-- GIF 4 -->
+
+                <article class="memory-card">
+
+                    <div class="image-container">
+
+                        <img
+                            src="https://media.tenor.com/39wP0L_5z1cAAAAC/love.gif"
+                            alt="Recuerdo 4"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="memory-label">
+                        MEMORY_04
+                    </div>
+
+                </article>
+
+
+                <!-- GIF 5 -->
+
+                <article class="memory-card">
+
+                    <div class="image-container">
+
+                        <img
+                            src="https://media.tenor.com/7b8i_6cZ7pAAAAAC/cute.gif"
+                            alt="Recuerdo 5"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="memory-label">
+                        MEMORY_05
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <button
+                id="originButton"
+                class="cyber-button pink-button"
+                type="button"
+            >
+                [ TODO COMENZÓ AQUÍ ]
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             04. TODO COMENZÓ AQUÍ
+        ================================================== -->
+
+        <section
+            id="origin"
+            class="section hidden-section"
+        >
+
+            <div class="origin-container">
+
+                <div class="system-label">
+                    root@heart:~$ cat /memories/day_one.txt
+                </div>
+
+
+                <h2>
+                    TODO COMENZÓ AQUÍ
+                </h2>
+
+
+                <div class="origin-text">
+
+                    <p>
+                        No sé exactamente en qué momento pasó.
+                    </p>
+
+                    <p>
+                        No sé exactamente cómo pasó.
+                    </p>
+
+                    <p>
+                        Pero poco a poco
+                        <strong>
+                            llegaste a ser parte de mi vida.
+                        </strong>
+                    </p>
+
+                    <p>
+                        Y tenía miedo.
+                    </p>
+
+                    <p>
+                        Miedo de equivocarme.
+                        Miedo de arruinar algo bonito.
+                        Miedo de interrumpir algunas cosas.
+                    </p>
+
+                    <p>
+                        Pensé mucho en todo lo que podía pasar.
+                    </p>
+
+                    <p>
+                        Hasta que entendí algo:
+                    </p>
+
+                    <p class="highlight">
+                        Nunca iba a existir el momento perfecto.
+                    </p>
+
+                    <p>
+                        Entonces decidí arriesgarme.
+                    </p>
+
+                    <p class="highlight">
+                        A todo o nada.
+                    </p>
+
+                    <p>
+                        Y ese día tomé una decisión.
+                    </p>
+
+                    <p>
+                        La decisión de intentarlo contigo.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="videoButton"
+                    class="cyber-button pink-button"
+                    type="button"
+                >
+                    [ VER ESE MOMENTO ]
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             05. VIDEO
+        ================================================== -->
+
+        <section
+            id="videoSection"
+            class="section hidden-section"
+        >
+
+            <div class="section-header">
+
+                <div class="system-label">
+                    // MEMORY VIDEO
+                </div>
+
+                <h2>
+                    EL DÍA QUE CAMBIÓ TODO
+                </h2>
+
+                <p>
+                    Este recuerdo merece su propio espacio.
+                </p>
+
+            </div>
+
+
+            <div class="video-wrapper">
+
+                <!--
+
+                    COLOCA TU VIDEO AQUÍ:
+
+                    assets/video/video.mp4
+
+                -->
+
+                <video
+                    id="memoryVideo"
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
+
+                    <source
+                        src="assets/video/video.mp4"
+                        type="video/mp4"
+                    >
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+
+                <div class="video-info">
+
+                    FILE:
+                    assets/video/video.mp4
+
+                    <br>
+
+                    STATUS:
+                    MEMORY_LOADED
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="letterButton"
+                class="cyber-button"
+                type="button"
+            >
+                [ ABRIR CARTA ]
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             06. CARTA
+        ================================================== -->
+
+        <section
+            id="letterSection"
+            class="section hidden-section"
+        >
+
+            <div class="section-header">
+
+                <div class="system-label">
+                    root@heart:~$ decrypt letter.enc
+                </div>
+
+                <h2>
+                    UNA CARTA PARA TI
+                </h2>
+
+            </div>
+
+
+            <!-- SOBRE -->
+
+            <div
+                id="envelope"
+                class="envelope"
+            >
+
+                <div class="envelope-icon">
+                    💌
+                </div>
+
+                <div class="envelope-text">
+                    CLICK PARA ABRIR
+                </div>
+
+                <div class="envelope-small">
+                    [ DECRYPT ]
+                </div>
+
+            </div>
+
+
+            <!-- CARTA ABIERTA -->
+
+            <article
+                id="letter"
+                class="letter"
+            >
+
+                <h3>
+                    PARA TI ❤️
+                </h3>
+
+
+                <p>
+                    Si llegaste hasta aquí,
+                    significa que decidiste abrir
+                    esta pequeña parte de mi corazón.
+                </p>
+
+
+                <p>
+                    Cuatro meses pueden parecer poco
+                    para algunas personas.
+                </p>
+
+
+                <p>
+                    Pero cuando pienso en todo lo que
+                    hemos vivido, siento que hay
+                    muchísimas cosas que guardar.
+                </p>
+
+
+                <p>
+                    Gracias por cada conversación,
+                    cada sonrisa, cada momento
+                    y cada pequeño detalle.
+                </p>
+
+
+                <p>
+                    Tal vez para ti algunos momentos
+                    fueron normales.
+                </p>
+
+
+                <p>
+                    Para mí significaron muchísimo.
+                </p>
+
+
+                <p>
+                    No sé exactamente qué nos espera
+                    en el futuro.
+                </p>
+
+
+                <p>
+                    Pero creo que eso también hace
+                    bonita esta historia.
+                </p>
+
+
+                <p>
+                    Lo que sí sé es que me alegra
+                    muchísimo haber tomado aquella
+                    decisión.
+                </p>
+
+
+                <p class="highlight">
+                    Haber dejado a un lado el miedo.
+                </p>
+
+
+                <p>
+                    Haberme arriesgado.
+                </p>
+
+
+                <p>
+                    Porque entre todas las posibilidades
+                    terminó apareciendo una historia
+                    que hoy significa muchísimo para mí.
+                </p>
+
+
+                <p class="highlight">
+                    Gracias por estos cuatro meses.
+                    PERDON SI NO PUEDO DEDICARTE TODO EL TIEMPO QUE QUIERO,
+                    PERO QUIERO QUE SEPAS QUE TE AMO Y QUE ERES MUY IMPORTANTE PARA MI
+
+            
+                </p>
+
+
+                <p>
+                    Y gracias por formar parte
+                    de mi vida.
+                </p>
+
+
+                <div class="signature">
+
+                    te amoooo muchoo,
+
+                    <br><br>
+
+                    <span>
+                        ♥ Kevin
+                        PASO A PASO LINEA POR LINEA, DIA A DIA MOMENTO A MOMENTO
+                        METAS ETERNAS 
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <button
+                id="finalButton"
+                class="cyber-button pink-button hidden-button"
+                type="button"
+            >
+                [ ÚLTIMO ARCHIVO ]
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             07. FINAL
+        ================================================== -->
+
+        <section
+            id="final"
+            class="section hidden-section final-section"
+        >
+
+            <div class="final-card">
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+
+                <div class="system-label">
+                    SYSTEM_MESSAGE:
+                    FINAL_DECRYPTION_COMPLETE
+                </div>
+
+
+                <h2>
+                    TE ELIJO A TI
+                </h2>
+
+
+                <p>
+                    Entre millones de personas,
+                    entre miles de historias,
+                    entre todas las casualidades...
+                </p>
+
+
+                <p>
+                    me alegra muchísimo que nuestras
+                    vidas hayan coincidido.
+                </p>
+
+
+                <div class="final-message">
+                    FELICES 4 MESES ❤️
+                </div>
+
+
+                <p class="final-small">
+                    // Este pequeño sistema fue creado
+                    solamente para ti.
+                    <br>
+                    // No contiene malware.
+                    <br>
+                    // Solamente contiene amor.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="js/app.js"
+        defer
+    ></script>
+
+</body>
+
+</html>
